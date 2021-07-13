@@ -4912,7 +4912,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
                     }
                     Else
                     {
-                        Wait (F4EV, 0x0500)
+                        Wait (F4EV, 0xFFFF)
                     }
                 }
 
@@ -5423,7 +5423,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
                             {
                                 If (LEqual (Arg0, Zero))
                                 {
-                                    Wait (F4EV, 0x0500)
+                                    Wait (F4EV, 0xFFFF)
                                 }
 
                                 Store (One, Local1)
