@@ -1279,7 +1279,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
         })
         Method (TRUP, 0, Serialized)
         {
-            Switch (PRDT)
+            Switch (ToInteger(PRDT))
             {
                 Case (0x50)
                 {
@@ -5148,7 +5148,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
                             Return (One)
                         }
 
-                        Switch (Arg2)
+                        Switch (ToInteger(Arg2))
                         {
                             Case (One)
                             {
@@ -6625,7 +6625,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
                 {
                     If (LEqual (And (CDID, 0xF000), 0x8000))
                     {
-                        Switch (Arg0)
+                        Switch (ToInteger(Arg0))
                         {
                             Case (One)
                             {
@@ -6692,7 +6692,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
                     }
                     Else
                     {
-                        Switch (Arg0)
+                        Switch (ToInteger(Arg0))
                         {
                             Case (One)
                             {
@@ -16897,7 +16897,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
 
     Method (_SB.PCI0.LPCB.PS2M._HID, 0, Serialized)  // _HID: Hardware ID
     {
-        Switch (PRDT)
+        Switch (ToInteger(PRDT))
         {
             Case (0x10)
             {
@@ -17690,7 +17690,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
                     {
                         If (LEqual (Arg1, Zero))
                         {
-                            Switch (PEPY)
+                            Switch (ToInteger(PEPY))
                             {
                                 Case (One)
                                 {
