@@ -11748,7 +11748,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
                             CreateWordField (CRES, \_SB.PCI0.LPCB.SIO.LPT0._CRS._Y1B._MAX, MAX2)  // _MAX: Maximum Base Address
                             CreateByteField (CRES, \_SB.PCI0.LPCB.SIO.LPT0._CRS._Y1B._LEN, LEN2)  // _LEN: Length
                             CreateWordField (CRES, \_SB.PCI0.LPCB.SIO.LPT0._CRS._Y1C._INT, IRQ0)  // _INT: Interrupts
-                            CreateWordField (CRES, \_SB.PCI0.LPCB.SIO.LPT0._CRS._Y1D._DMA, DMA0)  // _DMA: Direct Memory Access
+                            CreateByteField (CRES, \_SB.PCI0.LPCB.SIO.LPT0._CRS._Y1D._DMA, DMA0)  // _DMA: Direct Memory Access
                             If (RLPD)
                             {
                                 Store (Zero, Local0)
