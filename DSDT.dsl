@@ -505,7 +505,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
         Method (_INI, 0, NotSerialized)  // _INI: Initialize
         {
             Store (0x07D0, OSYS)
-            If (CondRefOf (\_OSI, Local0))
+            If (CondRefOf (\_OSI))
             {
                 If (LOr (_OSI ("Darwin"), _OSI ("Linux")))
                 {
@@ -2260,7 +2260,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
 
                         Store (DerefOf (Index (Local0, Local3)), Local2)
                         Multiply (Local2, 0x64, Local3)
-                        Divide (Add (Local3, 0x7F), 0xFF, Local6, Local2)
+                        Divide (Add (Local3, 0x7F), 0xFF, Local2)
                         Store (Local2, Index (DerefOf (Index (BCLS, BCLI)), Add (Local1, 0x02)))
                         If (LGreater (Local2, Local5))
                         {
@@ -4683,7 +4683,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
                     And (WDPE, 0xF8, Local0)
                     And (WDPE, 0x87, Local1)
                     Or (Local0, Arg0, WDPE)
-                    If (CondRefOf (^PDOS, Local2))
+                    If (CondRefOf (^PDOS))
                     {
                         PDOS (Arg0, Local1)
                     }
@@ -9176,7 +9176,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
                     Method (SFSD, 1, Serialized)
                     {
                         Multiply (Arg0, 0x40, Local1)
-                        Divide (Local1, 0x64, Local2, Local0)
+                        Divide (Local1, 0x64, Local0)
                         Subtract (0x40, Local0, Local0)
                         And (PWM0, 0x80, Local1)
                         If (LEqual (Local0, 0x40))
@@ -9204,7 +9204,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
                             ShiftRight (Local0, One, Local0)
                             Subtract (0x40, Local0, Local0)
                             Multiply (Local0, 0x64, Local0)
-                            Divide (Add (Local0, 0x20), 0x40, Local2, Local1)
+                            Divide (Add (Local0, 0x20), 0x40, Local1)
                             Increment (Local1)
                         }
 
@@ -9716,8 +9716,8 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
 
                     Method (ITLB, 0, NotSerialized)
                     {
-                        Divide (Add (NLB1, 0x09), 0x0A, Local0, Local1)
-                        Divide (0x9F, 0x0A, Local0, Local2)
+                        Divide (Add (NLB1, 0x09), 0x0A, Local1)
+                        Divide (0x9F, 0x0A, Local2)
                         If (ECRG)
                         {
                             Store (Local1, LB1)
@@ -10484,7 +10484,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
                         If (LEqual (Local1, Zero))
                         {
                             Store (One, Local1)
-                            If (CondRefOf (\_PR.CPPC, Local7))
+                            If (CondRefOf (\_PR.CPPC))
                             {
                                 If (LGreater (\_PR.CPPC, Zero))
                                 {
@@ -10523,7 +10523,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
                         If (LEqual (DCCP, Zero))
                         {
                             Store (Local1, DCCP)
-                            If (CondRefOf (\_PR.CPU0._PPC, Local5))
+                            If (CondRefOf (\_PR.CPU0._PPC))
                             {
                                 If (LNotEqual (\_PR.CPPC, \_PR.CPU0._PPC))
                                 {
@@ -10538,7 +10538,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
                     Method (RPPC, 1, Serialized)
                     {
                         Store (Zero, Local1)
-                        If (CondRefOf (\_PR.CPU0._PSS, Local2))
+                        If (CondRefOf (\_PR.CPU0._PSS))
                         {
                             Store (\_PR.CPU0._PSS, Local0)
                             Store (SizeOf (Local0), Local1)
@@ -10591,7 +10591,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
 
                         ETSI (Local3, 0x14, Arg0)
                         Store (Zero, Local4)
-                        If (CondRefOf (\_PR.CPU0._PPC, Local5))
+                        If (CondRefOf (\_PR.CPU0._PPC))
                         {
                             If (LNotEqual (LRPC, \_PR.CPU0._PPC))
                             {
