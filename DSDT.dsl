@@ -5980,6 +5980,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
 
                         Return (TEMP)
                     }
+                    Return (Zero)
                 }
 
                 Method (RDGP, 1, Serialized)
@@ -5996,6 +5997,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
 
                         Return (TEMP)
                     }
+                    Return (Zero)
                 }
 
                 Method (WTGP, 2, Serialized)
@@ -6733,6 +6735,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
 
                         }
                     }
+                Return (Zero)
                 }
 
                 Name (XRST, Zero)
@@ -6792,6 +6795,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
                     And (PDBM, 0xFFFFFFFFFFFFFFFD, PDBM)
                     Store (Local2, MEMB)
                     Store (Local1, PDBM)
+                Return (Zero)
                 }
 
                 Method (_PS3, 0, Serialized)  // _PS3: Power State 3
@@ -6845,6 +6849,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
                     And (PDBM, 0xFFFFFFFFFFFFFFFD, PDBM)
                     Store (Local2, MEMB)
                     Store (Local1, PDBM)
+                 Return (Zero)
                 }
 
                 Method (CUID, 1, Serialized)
@@ -6956,6 +6961,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
                         {
                             PS0X ()
                         }
+                        Return (Zero)
                     }
 
                     Method (_PS2, 0, Serialized)  // _PS2: Power State 2
@@ -16684,6 +16690,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
                 Return (TEM2)
             }
         }
+        Return (Zero)
     }
 
     Method (_SB.GLVW, 2, Serialized)
@@ -16727,6 +16734,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
 
             Return (GPIM)
         }
+        Return (Zero)
     }
 
     Method (_SB.GISW, 2, Serialized)
@@ -16841,6 +16849,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
 
             Return (GINV)
         }
+        Return (Zero)
     }
 
     Method (_SB.GINW, 2, Serialized)
