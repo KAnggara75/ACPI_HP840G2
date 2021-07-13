@@ -181,7 +181,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
 
         Store (\_SB.PCI0.LPCB.EC0.GACS (), Local2)
         \_SB.PCI0.LPCB.EC0.PWUP (0x03, 0xFF)
-        Store (\_SB.PCI0.LPCB.EC0.GBAP (), Local1)
+//        Store (\_SB.PCI0.LPCB.EC0.GBAP (), Local1)
         Store (\_SB.PCI0.LPCB.EC0.GACS (), Local3)
         Store (Local3, PWRS)
         XOr (Local3, Local2, Local3)
@@ -1310,7 +1310,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
 
         Method (INTM, 1, Serialized)
         {
-            Store (Zero, Local0)
+//            Store (Zero, Local0)
             OTHI (Arg0)
         }
 
@@ -1375,7 +1375,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
         Name (OTID, Zero)
         Method (ECTI, 1, Serialized)
         {
-            Store (Zero, Local0)
+//            Store (Zero, Local0)
             If (LEqual (Arg0, One))
             {
                 Store (One, OTID)
@@ -10232,7 +10232,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
 
                     Method (_Q0A, 0, NotSerialized)  // _Qxx: EC Query
                     {
-                        Store (\_GPE.VLET (), Local4)
+//                        Store (\_GPE.VLET (), Local4)
                         Notify (LID, 0x80)
                         ^^^ACEL.AJAL ()
                     }
@@ -15691,7 +15691,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
 
                 Method (HNLP, 1, Serialized)
                 {
-                    Store (Zero, Local0)
+//                    Store (Zero, Local0)
                 }
             }
 
@@ -15800,13 +15800,13 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
         Name (NFBS, One)
         Method (BTST, 1, Serialized)
         {
-            Store (NFBS, Local1)
+//            Store (NFBS, Local1)
             If (NFBS)
             {
                 Store (Zero, NFBS)
             }
 
-            Store (^PCI0.LPCB.EC0.BTST (Arg0, Local1), Local0)
+//            Store (^PCI0.LPCB.EC0.BTST (Arg0, Local1), Local0)
             Return (DerefOf (Index (NBST, Arg0)))
         }
 
@@ -16867,7 +16867,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
 
     Method (PPTS, 1, Serialized)
     {
-        Store (Zero, Local0)
+//        Store (Zero, Local0)
     }
 
     Method (PWAK, 1, Serialized)
