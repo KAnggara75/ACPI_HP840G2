@@ -2511,7 +2511,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "2216    ", 0x00000001)
 
             Name (_HID, EisaId ("PNP0A08"))  // _HID: Hardware ID
             Name (_CID, EisaId ("PNP0A03"))  // _CID: Compatible ID
-            Name (_ADR, Zero)  // _ADR: Address
+//            Name (_ADR, Zero)  // _ADR: Address
             OperationRegion (HBUS, PCI_Config, Zero, 0x0100)
             Field (HBUS, DWordAcc, NoLock, Preserve)
             {
